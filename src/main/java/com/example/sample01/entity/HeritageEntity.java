@@ -19,8 +19,6 @@ import lombok.Setter;
 @AllArgsConstructor // 全フィールドに対する初期化値を引数に取るコンストラクタの生成 必要？
 public class HeritageEntity {
 
-  //
-
   // 遺産ID(主キー)
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY) // キー生成をDBの機能で行う
