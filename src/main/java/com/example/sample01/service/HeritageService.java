@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-// import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.sample01.entity.HeritageEntity;
 import com.example.sample01.repository.HeritageRepository;

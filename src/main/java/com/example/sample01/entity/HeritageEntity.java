@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "heritage")
+@Table(schema = "heritage", name = "heritage")
 @Getter
 @Setter
 @NoArgsConstructor // デフォルトコンストラクタの自動生成 必要？
@@ -22,6 +22,7 @@ public class HeritageEntity {
   // 遺産ID(主キー)
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY) // キー生成をDBの機能で行う
+  @Column(name = "heritage_id")
   private Integer heritageId;
 
   // 遺産名
@@ -35,6 +36,13 @@ public class HeritageEntity {
   // 登録年
   @Column(name = "regist_year", nullable = false, length = 4)
   private Integer registYear;
+
+  public HeritageEntity(String heritageName, String heritageLocation, Integer registYear) {
+
+    this.heritageName = heritageName;
+    this.heritageLocation = heritageLocation;
+    this.registYear = registYear;
+  }
 
   // // 遺産ID
   // public Integer getId() {
