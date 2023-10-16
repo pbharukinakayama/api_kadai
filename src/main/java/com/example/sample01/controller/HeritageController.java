@@ -15,8 +15,6 @@ import com.example.sample01.entity.HeritageEntity;
 import com.example.sample01.exception.HeritageNotFoundException;
 import com.example.sample01.service.HeritageService;
 
-//git連携
-
 @RestController
 public class HeritageController {
 
