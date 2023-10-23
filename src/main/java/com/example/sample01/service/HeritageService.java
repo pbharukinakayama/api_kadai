@@ -29,16 +29,16 @@ public class HeritageService {
 
   // 特定のデータを参照
   public Optional<HeritageEntity> selectHeritage(Integer heritageId) {
-    return heritageRepository.findById(heritageId); // .orElse(null)
+    return heritageRepository.findById(heritageId);
   }
 
   // データを登録
-  public HeritageEntity addHeritage(HeritageEntity heritageEntity) { // 型はvoidでもよいか
+  public HeritageEntity addHeritage(HeritageEntity heritageEntity) {
     return heritageRepository.save(heritageEntity);
   }
 
   // データを更新
-  public void updateHeritage(Integer heritageId, HeritageEntity heritageEntity) { // 型はvoidか、HeritageEntity(エラー発生)か
+  public void updateHeritage(Integer heritageId, HeritageEntity heritageEntity) {
     if (heritageRepository.findById(heritageId).get() != null) {
       heritageRepository.save(heritageEntity);
     }

@@ -15,6 +15,8 @@ import com.example.sample01.entity.HeritageEntity;
 import com.example.sample01.exception.HeritageNotFoundException;
 import com.example.sample01.service.HeritageService;
 
+import jakarta.validation.constraints.NotNull;
+
 @RestController
 public class HeritageController {
 
@@ -35,13 +37,13 @@ public class HeritageController {
 
   // データを登録
   @PostMapping("/heritage")
-  public void addHeritage(@RequestBody HeritageEntity heritageEntity) {
-    heritageService.addHeritage(heritageEntity);
+  public HeritageEntity addHeritage(@RequestBody @NotNull HeritageEntity heritageEntity) {
+    return heritageService.addHeritage(heritageEntity);
   }
 
   // データを更新
   @PutMapping("/heritage/{heritageId}")
-  public void updateHeritage(@RequestBody HeritageEntity heritageEntity,
+  public void updateHeritage(@RequestBody @NotNull HeritageEntity heritageEntity,
       @PathVariable("heritageId") Integer heritageId) {
     heritageService.updateHeritage(heritageId, heritageEntity);
   }
